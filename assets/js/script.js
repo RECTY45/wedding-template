@@ -45,68 +45,6 @@ myaudio.addEventListener('ended', () => {
     pauseAudio();
 });
 
-$(document).ready(function () {
-    $("#kirim_btn").on("click", function (e) {
-        e.preventDefault();
-        if ($("#myName").val() === '') {
-            return alert('Nama Harus Diisi');
-        }
-        if ($("#myQuotes").val() === '') {
-            return alert('Pesan Harus Diisi');
-        }
-
-        $(this).html('Mengirim Pesan...');
-        var btn = $(this);
-        btn.attr("disabled", "disabled");
-
-        let http = new XMLHttpRequest();
-        http.open("GET", "https://undangan.arelec.site/arman-mega?nama=" + $('#myName').val() + "&pesan=" + $('#myQuotes').val(), true);
-
-        http.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                $("#ucapanTamu").prepend('<div class="wish">' +
-                    '<div class="wish-badge">' +
-                    '<h6>' + $('#myName').val().substring(0, 1) + '</h6></div>' +
-                    '<div class="wish-description">' +
-                    '<h6 style="font-size:1.17rem;">' + $('#myName').val() + '</h6>' +
-                    '<p>' + $('#myQuotes').val() + '</p></div></div>');
-
-                setTimeout(function () {
-                    btn.html('Terima kasih atas doa dan ucapannya');
-                    setTimeout(function () {
-                        btn.html('Kirim');
-                        btn.attr("disabled", false);
-                    }, 2000);
-                }, 1000);
-            }
-        };
-
-        http.send();
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    var http = new XMLHttpRequest();
-    http.open("GET", "https://udangan.arelec.site/reloadTamu2?reload=sukses", true);
-    http.send();
-
-    http.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            var len = data.length;
-            for (var i = 0; i < len; i++) {
-                $("#ucapanTamu").prepend('<div class="wish">' +
-                    '<div class="wish-badge">' +
-                    '<h6>' + data[i].nama.substring(0, 1) + '</h6></div>' +
-                    '<div class="wish-description">' +
-                    '<h6 style="font-size:1.17rem;">' + data[i].nama + '</h6>' +
-                    '<p>' + data[i].pesan + '</p></div></div>');
-            }
-        }
-    }
-});
-
 document.getElementById('salin_btn').addEventListener('click', function () {
     var noRekening = document.getElementById('no_rekening');
     var range = document.createRange();
