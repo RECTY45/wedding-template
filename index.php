@@ -86,14 +86,13 @@ function chatForm()
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://viding.co/invitation/theme_11/css/font.css?v=34207e5a08885eb5e13800481be842e260f4f24e" />
+    <link rel="stylesheet" href="assets/css/font.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="/css/colorpicker.css?v=63264c501e27fd074af87d371a6d9d0d150af1ed" />
-    <link rel="stylesheet" href="/css/gift_registry.css?v=4ee13078077ac186c56bc0db2c674627430a64f2" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/colorpicker.css" />
     <style type="text/css" id="operaUserStyle"></style>
     <style type="text/css"></style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" +MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.8/dist/css/splide.min.css" integrity="sha256-sB1O2oXn5yaSW1T/92q2mGU86IDhZ0j1Ya8eSv+6QfM=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css" />
     <link rel="stylesheet" href="https://unpkg.com/@icon/icofont/icofont.css" />
@@ -101,7 +100,6 @@ function chatForm()
     <style>
         .caption {
             margin: 0 20px;
-            /* Memberi jarak antara teks dan gambar */
         }
     </style>
     <link rel="stylesheet" href="assets/css/boxicons.css" />
@@ -1208,9 +1206,7 @@ function chatForm()
 
     <!-- scripts plugins -->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/colorpicker.min.js?v=e4e0a438c01838272acbfb4f2b4d1232cbe44709"></script>
-    <script src="/js/gift_registry_script.js?v=9bc1b0252ca518352d0e81960c9f47e69fdf9f17"></script>
-
+    <!-- <script src="assets/js/colorpicker.min.js"></script> -->
     <!-- scripts custom -->
     <script src="assets/js/countdown.js"></script>
     <script src="assets/js/app.js"></script>
@@ -1219,7 +1215,7 @@ function chatForm()
         document.addEventListener("DOMContentLoaded", function() {
             const btnOpenAngpao = document.querySelector("#openAngpao");
             const formAngpao = document.querySelector("#formGift");
-
+            
             if (btnOpenAngpao) {
                 btnOpenAngpao.addEventListener("click", () => {
                     formAngpao.classList.remove("d-none");
@@ -1358,11 +1354,6 @@ function chatForm()
             secondary: "#704a1e",
         };
 
-        const cp = colorpicker(
-            document.querySelector(".colorpicker__wrapper"),
-            defaultColors,
-            ""
-        );
 
         /** End of Color Picker **/
     </script>
