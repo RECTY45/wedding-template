@@ -1306,8 +1306,6 @@ function chatForm()
                 "font-size": parents_name_on_couple_font_size + "px",
                 "margin-bottom": "0px",
             });
-
-            reload_guestbook_data();
         });
 
         var section_order = [1, 2, 3, 4, 6, 5, 7, 8, 9];
